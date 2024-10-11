@@ -19,7 +19,7 @@ library(tidyverse)
 library(ggplot2)
 
 # This data is not necessarily reporoducible because I retrieve the data using the Spotify API and a personal client ID
-black_keys_clean <- readRDS("/Users/liamwall/Spotify/data/black_keys_cleaned.rds")
+# black_keys_clean <- readRDS("/Users/liamwall/Spotify/data/black_keys_cleaned.rds")
 ```
 
 # Introduction
@@ -35,15 +35,5 @@ Their later albums, Attack and Release to present, showcase a different side of 
 
 # Data
 I have rambled so now we will explore the data quickly. The data was retrieved using Spotify's API on the open source programming language R [@cite-R][@cite-spotifyr]. The available data regarding The Black Keys is a table with 222 observations over 39 variables. The observations are for each song in their discography and the variables range from links, previews of the songs, images of the albums, album name, song name and duration, to variables that examine features of the audio [@cite-black-keys-data]. The features of the audio that Spotify gives us are things like a measure of bpm, key, happiness (valence), loudness, likelihood of being live, acousticness, and 'speechiness.' Spotify has a well formed way of attaining these values that can be explored at https://developer.spotify.com/documentation/web-api/reference/get-audio-features#. 
-
-# Results
-
-```{r}
-#| include: false
-#| warning: false
-#| message: false
-
-
-```
 
 
