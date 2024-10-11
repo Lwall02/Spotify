@@ -10,17 +10,6 @@ number-sections: true
 bibliography: references.bib
 ---
 
-```{r}
-#| include: false
-#| warning: false
-#| message: false
-
-library(tidyverse)
-library(ggplot2)
-
-# This data is not necessarily reporoducible because I retrieve the data using the Spotify API and a personal client ID
-# black_keys_clean <- readRDS("/Users/liamwall/Spotify/data/black_keys_cleaned.rds")
-```
 
 # Introduction
 This short paper will not be a rundown of the history of a band, or the story of their making, or reason they are so successful. This will be a paper about a band I really, some of the facts I know about them, the reason they are so appealiing to me, and some of the explanations I give to the trends I observe in the data I have. The band in question is The Black Keys. To start, The Black Keys are a rock band from Akron, Ohio with singer/guitarist Dan Auerbach and drummer Patrick Carney. The band itself started as just a duo of good friends who enjoyed similar music. Their first album, The Big Come Up was released in 2002, the year I was born. Their second album, released in 2003, named Thickfreakness, is where my appreciation for the band began. 
