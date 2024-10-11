@@ -35,7 +35,7 @@ Their later albums, Attack and Release to present, showcase a different side of 
 # Data
 I have rambled so now we will explore the data quickly. The data was retrieved using Spotify's API on the open source programming language R [@cite-R][@cite-spotifyr]. The available data regarding The Black Keys is a table with 222 observations over 39 variables. The observations are for each song in their discography and the variables range from links, previews of the songs, images of the albums, album name, song name and duration, to variables that examine features of the audio [@cite-black-keys-data]. The features of the audio that Spotify gives us are things like a measure of bpm, key, happiness (valence), loudness, likelihood of being live, acousticness, and 'speechiness.' Spotify has a well formed way of attaining these values that can be explored at the Spotify Developer Page. 
 
-# Results
+# Results and Discussion
 
 ```{r}
 #| label: fig-duration
@@ -67,7 +67,7 @@ The @fig-duration shows The Black Key's song duration in milliseconds by year of
 
 ```{r}
 #| label: fig-valence
-#| fig-cap: "This graph shows the valence value of The Black Keys songs by year of the album release."
+#| fig-cap: "This graph shows the valence value on a scale of 0 to 1 of The Black Keys songs by year of the album release."
 #| warning: false
 #| message: false
 #| echo: false
@@ -85,8 +85,30 @@ black_keys_clean |>
   scale_color_brewer(palette = "Set1") +
   theme(legend.position = "none")
 ```
-The @fig-valence shows The Black Key's song valence value by year of album release. In this figure we can see a noticeable dip in valence as they gained popularity with an increase in valence value very recently. The explanation for this is that in the early days they were searching for the sound they enjoyed and their fans would enjoy. In 2010 and 2011 when they were at their peak, valence was at it's lowest. Since they attained their popularity, The Black Keys began experiementing with their music and seemingly went back to a similar valence that they started with. It shows that a band may start playing in a way they enjoy but have to sacrifice that sound for something that makes them a living. With the success already attained, in their later years they can return to what they desire. 
+The @fig-valence shows The Black Key's song valence value by year of album release. A higher valence is supposed to resemble a 'happier' song. In this figure we can see a noticeable dip in valence as they gained popularity with an increase in valence value very recently. The explanation for this is that in the early days they were searching for the sound they enjoyed and their fans would enjoy. In 2010 and 2011 when they were at their peak, valence was at it's lowest. Since they attained their popularity, The Black Keys began experiementing with their music and seemingly went back to a similar valence that they started with. It shows that a band may start playing in a way they enjoy but have to sacrifice that sound for something that makes them a living. With the success already attained, in their later years they can return to what they desire. 
 
+```{r}
+#| label: fig-loudness
+#| fig-cap: "This graph shows the loudness on a scale from 0 to 1 of The Black Keys songs by year of the album release."
+#| warning: false
+#| message: false
+#| echo: false
+
+black_keys_clean |>
+  ggplot(aes( x = album_release_date, y = loudness)) +
+  geom_point(alpha = 0.3) +
+  geom_smooth() +
+  theme_minimal() +
+  labs(
+    x = "Album release date",
+    y = "Liveness",
+    color = "Artist"
+  ) +
+  scale_color_brewer(palette = "Set1") +
+  theme(legend.position = "none")
+
+```
+Lastly, in @fig-loudness we observe a less linear change in the loudness of The Black Key's music as time went on. They started loud, however their albums got quieter towards the middle of their career, and very recently, as their music becomes more experimental, the loudness increases again. In the middle of their career, around the 2013 mark with the release of Turn Blue in 2014, The Black Keys become slightly louder. The explanation for this I believe lies in a quick try of being experimental for the Turn Blue album. This album was a noticeable departure from their previous sound and the reception was not too great. In this album, the sound becomes more electronic as opposed to a raw guitar and drum sound. They experiment with electronic backing tracks and unique instruments. Because of the slightly bad reception of the album by the greater public, The Black Keys returned to a tried and true level of loudness that is similar to levels in 2010 and 2011 with Brothers and El Camino. However after a long break, they eventually experimented with a sound they like and recently the loudness levels have increased.
 
 \newpage
 # References
