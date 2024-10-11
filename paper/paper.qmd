@@ -1,7 +1,6 @@
 ---
 title: "The Black Keys and Their Spotify Metadata"
-author: 
-  - Liam Wall
+author: Liam Wall
 thanks: "Code and data are available at: https://github.com/Lwall02/Spotify"
 date: 10 October 2024
 date-format: long
@@ -23,6 +22,6 @@ Their fourth album, one of my favorites, is called Chulahoma. As mentioned befor
 Their later albums, Attack and Release to present, showcase a different side of The Black Keys. A side where they start making money and have the ability to introduce a lot more production and extra musicians to bring their vision to life. They include other instruments like piano, electronic sounds, and more upbeat "poppy" sounds. Their albums Brothers and El Camino respectively released in 2010 and 2011 are particularly large hits. It hit me one day when I was in middle school just how popular they were when I saw them playing live at an NBA game. Some of their most popular songs ever are from these albums like "Gold on the Celing," "Lonely Boy" and "Howlin For You." 
 
 # Data
-I have rambled so now we will explore the data quickly. The data was retrieved using Spotify's API on the open source programming language R [@cite-R][@cite-spotifyr]. The available data regarding The Black Keys is a table with 222 observations over 39 variables. The observations are for each song in their discography and the variables range from links, previews of the songs, images of the albums, album name, song name and duration, to variables that examine features of the audio [@cite-black-keys-data]. The features of the audio that Spotify gives us are things like a measure of bpm, key, happiness (valence), loudness, likelihood of being live, acousticness, and 'speechiness.' Spotify has a well formed way of attaining these values that can be explored at https://developer.spotify.com/documentation/web-api/reference/get-audio-features#. 
+I have rambled so now we will explore the data quickly. The data was retrieved using Spotify's API on the open source programming language R [@cite-R][@cite-spotifyr]. The available data regarding The Black Keys is a table with 222 observations over 39 variables. The observations are for each song in their discography and the variables range from links, previews of the songs, images of the albums, album name, song name and duration, to variables that examine features of the audio [@cite-black-keys-data]. The features of the audio that Spotify gives us are things like a measure of bpm, key, happiness (valence), loudness, likelihood of being live, acousticness, and 'speechiness.' Spotify has a well formed way of attaining these values that can be explored at the Spotify Developer Page. 
 
 
