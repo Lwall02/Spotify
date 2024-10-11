@@ -13,5 +13,5 @@
 # library(spotifyr)
 
 black_keys <- get_artist_audio_features("the black keys")
+saveRDS(black_keys, "data/black_keys_raw.rds")
 
-saveRDS(black_keys, "data/black_keys.rds")
