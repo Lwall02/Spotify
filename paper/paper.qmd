@@ -18,7 +18,7 @@ library(tidyverse)
 library(ggplot2)
 
 # This data is not necessarily reporoducible because I retrieve the data using the Spotify API and a personal client ID
-# black_keys_clean <- readRDS("/Users/liamwall/Spotify/data/black_keys_cleaned.rds")
+black_keys_clean <- readRDS("/Users/liamwall/Spotify/data/black_keys_cleaned.rds")
 ```
 
 # Introduction
@@ -38,9 +38,11 @@ I have rambled so now we will explore the data quickly. The data was retrieved u
 # Results
 
 ```{r}
-#| include: false
+#| label: fig-duration
+#| fig-cap: "This graph shows the duration of The Black Keys songs by year of the album release."
 #| warning: false
 #| message: false
+#| echo: false
 
 black_keys_clean |>
   drop_na() |>
@@ -54,9 +56,37 @@ black_keys_clean |>
   theme_minimal() +
   labs(
     x = "Album release date",
-    y = "Duration of song (ms)"
+    y = "Duration of song (ms)",
+    title = "The Black Keys Song Duration by Year"
   ) +
   scale_color_brewer(palette = "Set2") +
   theme(legend.position = "none")
 ```
+The @fig-duration shows The Black Key's song duration in milliseconds by year of the album release. The third album, Rubber Factory, has the greatest range of song duration aside from the first album with one long song. That song is a large outlier at 23 minutes and 20 seconds titled '240 Years Before Your Time.'
 
+
+```{r}
+#| label: fig-valence
+#| fig-cap: "This graph shows the valence value of The Black Keys songs by year of the album release."
+#| warning: false
+#| message: false
+#| echo: false
+
+black_keys_clean |>
+  ggplot(aes( x = album_release_date, y = valence)) +
+  geom_point(alpha = 0.3) +
+  geom_smooth() +
+  theme_minimal() +
+  labs(
+    x = "Album release date",
+    y = "Valence",
+    color = "Artist"
+  ) +
+  scale_color_brewer(palette = "Set1") +
+  theme(legend.position = "none")
+```
+The @fig-valence shows The Black Key's song valence value by year of album release. In this figure we can see a noticeable dip in valence as they gained popularity with an increase in valence value very recently. The explanation for this is that in the early days they were searching for the sound they enjoyed and their fans would enjoy. In 2010 and 2011 when they were at their peak, valence was at it's lowest. Since they attained their popularity, The Black Keys began experiementing with their music and seemingly went back to a similar valence that they started with. It shows that a band may start playing in a way they enjoy but have to sacrifice that sound for something that makes them a living. With the success already attained, in their later years they can return to what they desire. 
+
+
+\newpage
+# References
