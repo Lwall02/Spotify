@@ -43,22 +43,7 @@ I have rambled so now we will explore the data quickly. The data was retrieved u
 #| warning: false
 #| message: false
 
-black_keys_clean |>
-  drop_na() |>
-  ggplot(aes(
-    x = album_release_date,
-    y = duration_ms,
-    group = album_release_date
-  )) +
-  geom_boxplot() +
-  geom_jitter(alpha = 0.5, width = 0.3, height = 0) +
-  theme_minimal() +
-  labs(
-    x = "Album release date",
-    y = "Duration of song (ms)"
-  ) +
-  scale_color_brewer(palette = "Set2") +
-  theme(legend.position = "none")
+
 ```
 
 
